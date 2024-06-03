@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/images/background2.jpg);
+  max-width: 1600px;
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.container {
+  font-family: "Loved by the King", cursive;
+  font-weight: 400;
+  color: #fff !important;
+  font-size: 1.3em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h2 {
+  margin-top: 10px;
+}
+
+.title {
+  text-decoration: line-through;
+  color: red;
+}
+/*Table Section*/
+.table,
+th,
+td {
+  font-size: 1em;
+  padding: 5px;
+  border: 1px dotted #fff;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+#win-header {
+  color: #15df7d;
+}
+
+#loss-header {
+  color: #ec1919;
+}
+
+#draw-header {
+  color: #ffe65b;
+}
+
+.flex-blackjack-row-1,
+.flex-blackjack-row-2,
+.flex-blackjack-row-3 {
+  display: flex;
+  padding: 5px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.flex-blackjack-row-2 div {
+  padding: 10px;
+
+  flex: 1; /* Take the full width */
+  height: 350px;
+  text-align: center;
+}
+.flex-blackjack-row-2 div img {
+  padding: 10px;
+
+  object-fit: contain; /* Do not stretch the image so resolution stays the same*/
+}
+
+.flex-blackjack-row-3 div {
+  padding: 10px;
+}
+
+.flex-blackjack-row-3 div button {
+  padding: 10px;
+  border-radius: 20%;
+  margin-bottom: 10px;
+}
