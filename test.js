@@ -72,6 +72,10 @@ function blackjackHit() {
 
     //active player card
     showCard(card, YOU);
+    updateScore(card, YOU);
+
+    //passing YOU as the active player
+    showScore(YOU);
   }
 }
 
@@ -100,10 +104,12 @@ function showCard(card, activePlayer) {
   }
 }
 
+//hiding newWidthSize for now until I can figure out how to make it work
 //reduce width size if over 1000
 function widthSize() {
   if (windowWidth > 1000) {
-    let newWidthSize = window.screen.width * 0.11;
+    //let newWidthSize = window.screen.width * 0.12;
+    //return newWidthSize;
   }
   //if width less than 1000
   else {
@@ -120,5 +126,34 @@ function heightSize() {
   //if height less than 1000
   else {
     return window.screen.height * 0.15;
+  }
+}
+//Score function
+function updateScore(card, activePlayer) {
+  if (card === "A") {
+    //if adding 11 keeps me below 21, add 11. Otherwise, add 1
+    if (activePlayer["score"] + blackjackGame["cardsMap"][card][1] <= 21) {
+      //add 11
+      activePlayer["score"] += blackjackGame["cardsMap"][card][1];
+    } else {
+      //add 1 (0 index)
+      activePlayer["score"] += blackjackGame["cardsMap"][card][0];
+    }
+    //if card is not an ace, add value to score
+  } else {
+    activePlayer["score"] += blackjackGame["cardsMap"][card];
+  }
+}
+
+// Show score
+function showScore(activePlayer) {
+  if (activePlayer["score"] > 21) {
+    //display bust if score is over 21 by targeting the score span id
+    document.querySelector(activePlayer["scoreSpan"]).textContent = "BUST!";
+    document.querySelector(activePlayer["scoreSpan"]).style.color = "red";
+  } else {
+    //display score
+    document.querySelector(activePlayer["scoreSpan"]).textContent =
+      activePlayer["score"];
   }
 }

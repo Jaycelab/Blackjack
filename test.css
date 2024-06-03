@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&display=swap");
 
 * {
   margin: 0;
@@ -8,10 +9,14 @@
 
 body {
   background-image: url(/images/background2.jpg);
-  max-width: 1600px;
+  /*max-width: 1600px;
   background-color: #cccccc; /* Used if the image is unavailable */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#blackjack-result {
+  font-size: 0.7em;
 }
 
 .container {
@@ -35,7 +40,7 @@ body {
 .table,
 th,
 td {
-  font-size: 1em;
+  font-size: 1.1em;
   padding: 5px;
   border: 1px dotted #fff;
   color: white;
@@ -66,12 +71,17 @@ td {
 }
 
 .flex-blackjack-row-2 div {
-  padding: 10px;
-
   flex: 1; /* Take the full width */
-  height: 350px;
+  height: 375px;
   text-align: center;
 }
+
+.flex-blackjack-row-2 div h2 {
+  font-family: "Poltawski Nowy", serif;
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
 .flex-blackjack-row-2 div img {
   padding: 10px;
 
