@@ -30,6 +30,7 @@ body {
 
 .container h2 {
   margin-top: 10px;
+  font-size: 1.8em;
 }
 
 .title {
@@ -72,7 +73,7 @@ td {
 
 .flex-blackjack-row-2 div {
   flex: 1; /* Take the full width */
-  height: 375px;
+  height: 275px;
   text-align: center;
 }
 
@@ -84,7 +85,6 @@ td {
 
 .flex-blackjack-row-2 div img {
   padding: 10px;
-
   object-fit: contain; /* Do not stretch the image so resolution stays the same*/
 }
 
@@ -94,6 +94,7 @@ td {
 
 .flex-blackjack-row-3 div button {
   padding: 10px;
-  border-radius: 20%;
+  border-radius: 15%;
   margin-bottom: 10px;
 }
+
