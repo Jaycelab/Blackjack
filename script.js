@@ -56,14 +56,15 @@ const DEALER = blackjackGame["dealer"];
 
 //audio
 const hitSound = new Audio("sounds/swish.m4a");
-const winSound = new Audio("sounds/cash.mp3");
-const loseSound = new Audio("sounds/aww.mp3");
+const winSound = new Audio("sounds/yas.mp3");
+const loseSound = new Audio("sounds/sponge.mp3");
 
 //card dynamic size for all screens
 let windowWidth = window.screen.width;
 let windowHeight = window.screen.height;
 let winner;
 
+// BUTTON EVENT LISTENERS
 // Hit event listener
 document
   .querySelector("#blackjack-hit-button")
@@ -73,6 +74,11 @@ document
 document
   .querySelector("#blackjack-stand-button")
   .addEventListener("click", blackjackStand);
+
+// Deal event listener
+document
+  .querySelector("#blackjack-deal-button")
+  .addEventListener("click", blackjackDeal);
 
 //checks if blackjackGame status is false. If true, it will draw a random card from the cards array with the randomCard function
 function blackjackHit() {
@@ -210,8 +216,10 @@ function computeWinner() {
     }
     //condition if both players have the same score
     else if (YOU["score"] === DEALER["score"]) {
-      winner = "draw";
+      winner = "Draw";
     }
+
+    //Second if statement
     //condition if player busts but dealer doesn't
   } else if (YOU["score"] > 21 && DEALER["score"] <= 21) {
     winner = DEALER;
@@ -262,4 +270,40 @@ function showWinner() {
   //targeting DOM element for winner message
   document.querySelector("#blackjack-result").textContent = message;
   document.querySelector("#blackjack-result").style.color = messageColor;
+}
+
+//Deal Button
+function blackjackDeal() {
+  if (blackjackGame["isTurnsOver"] === true) {
+    //resetting the game status and images----=
+    let yourImages = document
+      .querySelector("#your-box")
+      .querySelectorAll("img");
+    let dealerImages = document
+      .querySelector("#dealer-box")
+      .querySelectorAll("img");
+
+    //resetting both scores 0
+    YOU["score"] = DEALER["score"] = 0;
+    document.querySelector("#your-blackjack-result").textContent = 0;
+    document.querySelector("#dealer-blackjack-result").textContent = 0;
+
+    //resetting the score color
+    document.querySelector("#your-blackjack-result").style.color = "white";
+    document.querySelector("#dealer-blackjack-result").style.color = "white";
+
+    //resetting heading title content
+    document.querySelector("#blackjack-result").textContent = "Let's Play";
+
+    //remove both player and dealer cards
+    for (let i = 0; i < yourImages.length; i++) {
+      yourImages[i].remove();
+      dealerImages[i].remove();
+    }
+
+    //reverts back to the original state
+    blackjackGame["isStand"] = false;
+    blackjackGame.pressOnce = false;
+    blackjackGame["isTurnsOver"] = false;
+  }
 }

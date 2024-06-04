@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url(/images/background2.jpg);
+  background-image: url(/blackjack/images/background2.jpg);
   /*max-width: 1600px;
   background-color: #cccccc; /* Used if the image is unavailable */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -65,7 +65,7 @@ td {
 .flex-blackjack-row-2,
 .flex-blackjack-row-3 {
   display: flex;
-  padding: 5px;
+  padding: 10px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -73,7 +73,7 @@ td {
 
 .flex-blackjack-row-2 div {
   flex: 1; /* Take the full width */
-  height: 275px;
+  height: 375px;
   text-align: center;
 }
 
@@ -97,4 +97,3 @@ td {
   border-radius: 15%;
   margin-bottom: 10px;
 }
-
