@@ -16,6 +16,7 @@ The rules of the game are as follows:
 
 ## Known Issues
 
+- Selecting restart prior to card images being loaded can sometimes not trigger the remove method for clearing previous card images
 - Function call to restart game state will sometimes not get called after consecutive hands (tested after 4th/5th hand)
 
 ## Tasks
