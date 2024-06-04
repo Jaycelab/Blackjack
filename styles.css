@@ -9,8 +9,8 @@
 
 body {
   background-image: url(images/background8.jpg);
-  background-;
-  /*max-width: 1600px;
+  /*height: 100vh;
+  max-width: 1500px;*/
   background-color: #cccccc; /* Used if the image is unavailable */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -108,7 +108,25 @@ td {
   font-weight: 500;
 }
 
-.table-scores {
-  font-weight: 500;
-  font-size: 1.2em;
+/* responsive styling */
+@media screen and (max-width: 768px) {
+  body {
+    background-size: auto !important;
+  }
+
+  .flex-blackjack-row-1,
+  .flex-blackjack-row-2,
+  .flex-blackjack-row-3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flex-blackjack-row-2 div {
+    height: auto;
+  }
+
+  .table-scores {
+    font-weight: 500;
+    font-size: 1.2em;
+  }
 }
