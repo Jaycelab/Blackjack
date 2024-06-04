@@ -56,7 +56,7 @@ const DEALER = blackjackGame["dealer"];
 
 //audio
 const hitSound = new Audio("sounds/swish.m4a");
-const winSound = new Audio("sounds/yas.mp3");
+const winSound = new Audio("sounds/cash.mp3");
 const loseSound = new Audio("sounds/sponge.mp3");
 
 //card dynamic size for all screens
@@ -79,6 +79,11 @@ document
 document
   .querySelector("#blackjack-deal-button")
   .addEventListener("click", blackjackDeal);
+
+// Restart event listener
+document
+  .querySelector("#blackjack-restart-button")
+  .addEventListener("click", blackjackRestart);
 
 //checks if blackjackGame status is false. If true, it will draw a random card from the cards array with the randomCard function
 function blackjackHit() {
@@ -294,6 +299,7 @@ function blackjackDeal() {
 
     //resetting heading title content
     document.querySelector("#blackjack-result").textContent = "Let's Play";
+    document.querySelector("#blackjack-result").style.color = "white";
 
     //remove both player and dealer cards
     for (let i = 0; i < yourImages.length; i++) {
@@ -306,4 +312,20 @@ function blackjackDeal() {
     blackjackGame.pressOnce = false;
     blackjackGame["isTurnsOver"] = false;
   }
+}
+
+//Restart Button function
+
+//resets all text scores to zero
+function blackjackRestart() {
+  blackjackDeal();
+
+  document.querySelector("#wins").textContent = 0;
+  document.querySelector("#losses").textContent = 0;
+  document.querySelector("#draws").textContent = 0;
+
+  //resets all score values to zero
+  blackjackGame.wins = 0;
+  blackjackGame.losses = 0;
+  blackjackGame.draws = 0;
 }

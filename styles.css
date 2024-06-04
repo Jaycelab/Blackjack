@@ -16,12 +16,12 @@ body {
 }
 
 #blackjack-result {
-  font-size: 0.7em;
+  font-size: 0.9em;
 }
 
 .container {
   font-family: "Loved by the King", cursive;
-  font-weight: 400;
+  font-weight: 500;
   color: #fff !important;
   font-size: 1.3em;
   margin: 0 auto;
@@ -42,8 +42,8 @@ body {
 th,
 td {
   font-size: 1.1em;
-  padding: 5px;
-  border: 1px dotted #fff;
+  padding: 10px;
+  border: 1px solid #fff;
   color: white;
   align-items: center;
   text-align: center;
@@ -94,6 +94,20 @@ td {
 
 .flex-blackjack-row-3 div button {
   padding: 10px;
+  width: 80px;
+  border: 1px dotted #fffdfd;
+  font-size: 1.3em;
+  font-weight: 500;
   border-radius: 15%;
   margin-bottom: 10px;
+}
+
+#blackjack-stand-button {
+  color: #f7f7f7 !important;
+  font-weight: 500;
+}
+
+.table-scores {
+  font-weight: 500;
+  font-size: 1.2em;
 }

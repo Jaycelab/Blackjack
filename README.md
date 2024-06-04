@@ -13,3 +13,13 @@ The rules of the game are as follows:
 5. If a player's hand value exceeds 21, they bust and lose the game.
 6. After all players have made their moves, the dealer reveals their hand and hits until their hand value is 17 or higher.
 7. If the dealer's hand value exceeds 21, all remaining players win. Otherwise, the dealer compares their hand value to each player's hand value and the highest value wins.
+
+## Known Issues
+
+- Function call to restart game state will sometimes not get called after consecutive hands (tested after 4th/5th hand)
+
+## Tasks
+
+- Implement split and double down function
+- Add more reponsiveness for larger selection of screen sizes and devices
+- Implement function to automatically end turn if player bust over 21
